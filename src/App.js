@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import Statistics from './components/Statistics/Statistics';
 import FeedbackOptions from './components/FeedBackOptions/FeedBackOptions';
 import Section from './components/Section/Section';
@@ -23,11 +23,9 @@ export default class App extends Component {
 		const percentage = (good * 100) / result;
 		return Math.round(percentage);
 	};
-
-	onLeaveFeedback = (e) => {
-		const name = e.target.name;
-		this.setState((prevState) => ({
-			[name]: prevState[name] + 1
+	onLeaveFeedback = option => {
+		this.setState(state => ({
+			[option]: state[option] + 1,
 		}));
 	};
 	render() {
